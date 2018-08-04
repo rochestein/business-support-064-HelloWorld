@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2018_07_31_020435) do
     t.index ["usuario_id"], name: "index_testigos_on_usuario_id"
   end
 
-  create_table "unidades_policia", force: :cascade do |t|
+  create_table "unidades_policias", force: :cascade do |t|
     t.string "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2018_07_31_020435) do
   end
 
   add_foreign_key "denuncias", "incidencias"
-  add_foreign_key "denuncias", "unidades_policia", column: "unidad_policia_id"
+  add_foreign_key "denuncias", "unidades_policias", column: "unidad_policia_id"
   add_foreign_key "denuncias", "usuarios"
   add_foreign_key "evidencias", "denuncias"
   add_foreign_key "evidencias_testigos", "testigos", column: "testigos_id"
