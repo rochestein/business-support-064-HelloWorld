@@ -15,57 +15,49 @@ ActiveRecord::Schema.define(version: 2018_07_31_020435) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "denuncias", force: :cascade do |t|
-    t.bigint "usuario_id"
-    t.bigint "incidencia_id", null: false
-    t.bigint "unidad_policia_id", null: false
-    t.string "ubicacion", null: false
-    t.datetime "fecha_incidencia", null: false
+  create_table "complaints", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "incident_id", null: false
+    t.bigint "police_unit_id", null: false
+    t.string "location", null: false
+    t.datetime "date_incident", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["usuario_id"], name: "index_denuncias_on_usuario_id"
+    t.index ["user_id"], name: "index_complaints_on_user_id"
   end
 
-  create_table "evidencias", force: :cascade do |t|
-    t.bigint "denuncia_id", null: false
-    t.string "path_archivo"
-    t.string "narracion"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "evidencias_testigos", force: :cascade do |t|
-    t.bigint "testigos_id"
-    t.string "path_archivo"
-    t.string "narracion"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["testigos_id"], name: "index_evidencias_testigos_on_testigos_id"
-  end
-
-  create_table "incidencias", force: :cascade do |t|
-    t.string "nombre", null: false
-    t.text "descripcion", null: false
-    t.bigint "incidencia_padre_id"
+  create_table "evidences", force: :cascade do |t|
+    t.bigint "complaint_id", null: false
+    t.string "path_file"
+    t.string "narration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "testigos", force: :cascade do |t|
-    t.bigint "usuario_id"
-    t.bigint "denuncia_id", null: false
+  create_table "evidences_witnesses", force: :cascade do |t|
+    t.bigint "witnesses_id"
+    t.string "path_file"
+    t.string "narration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["usuario_id"], name: "index_testigos_on_usuario_id"
+    t.index ["witnesses_id"], name: "index_evidences_witnesses_on_witnesses_id"
   end
 
-  create_table "unidades_policias", force: :cascade do |t|
-    t.string "nombre"
+  create_table "incidents", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.bigint "incident_father_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "usuarios", force: :cascade do |t|
+  create_table "police_units", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password", null: false
     t.string "firstname", null: false
@@ -76,12 +68,20 @@ ActiveRecord::Schema.define(version: 2018_07_31_020435) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "denuncias", "incidencias"
-  add_foreign_key "denuncias", "unidades_policias", column: "unidad_policia_id"
-  add_foreign_key "denuncias", "usuarios"
-  add_foreign_key "evidencias", "denuncias"
-  add_foreign_key "evidencias_testigos", "testigos", column: "testigos_id"
-  add_foreign_key "incidencias", "incidencias", column: "incidencia_padre_id"
-  add_foreign_key "testigos", "denuncias"
-  add_foreign_key "testigos", "usuarios"
+  create_table "witnesses", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "complaint_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_witnesses_on_user_id"
+  end
+
+  add_foreign_key "complaints", "incidents"
+  add_foreign_key "complaints", "police_units"
+  add_foreign_key "complaints", "users"
+  add_foreign_key "evidences", "complaints"
+  add_foreign_key "evidences_witnesses", "witnesses", column: "witnesses_id"
+  add_foreign_key "incidents", "incidents", column: "incident_father_id"
+  add_foreign_key "witnesses", "complaints"
+  add_foreign_key "witnesses", "users"
 end
