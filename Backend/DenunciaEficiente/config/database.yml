@@ -14,11 +14,11 @@ default: &default
 
 development:
  <<: *default
- database: denuncia_dev
+ database: complaint_dev
 
 test:
  <<: *default
- database: denuncia_test
+ database: complaint_test
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -26,4 +26,4 @@ test:
 
 production:
  <<: *default
- database: denuncia_prod
+ database: complaint_prod

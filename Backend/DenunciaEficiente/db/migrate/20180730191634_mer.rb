@@ -22,7 +22,7 @@ class Mer < ActiveRecord::Migration[5.2]
     # end
 
     # create_table :denuncias do |t|
-    #   t.belongs_to :usuario, index: true, foreign_key: true
+    #   t.belongs_to :user, index: true, foreign_key: true
     #   t.bigint :incidencia_id, null: false
     #   t.bigint :unidad_policia_id, null: false
     #   t.string :ubicacion, null: false
@@ -31,15 +31,15 @@ class Mer < ActiveRecord::Migration[5.2]
     # end    
 
     # create_table :evidencias do |t|
-    #   t.bigint :denuncia_id, null: false
+    #   t.bigint :complaint_id, null: false
     #   t.string :path_archivo
     #   t.string :narracion
     #   t.timestamps null: false
     # end
 
     # create_table :testigos do |t|
-    #   t.belongs_to :usuario, index: true, foreign_key: true
-    #   t.bigint :denuncia_id, null: false
+    #   t.belongs_to :user, index: true, foreign_key: true
+    #   t.bigint :complaint_id, null: false
     #   t.timestamps null: false
     # end
 
