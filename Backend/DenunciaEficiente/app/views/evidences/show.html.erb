@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Complaint:</strong>
+  <%= @evidence.complaint_id %>
+</p>
+
+<p>
+  <strong>Path file:</strong>
+  <%= @evidence.path_file %>
+</p>
+
+<p>
+  <strong>Narration:</strong>
+  <%= @evidence.narration %>
+</p>
+
+<%= link_to 'Edit', edit_evidence_path(@evidence) %> |
+<%= link_to 'Back', evidences_path %>

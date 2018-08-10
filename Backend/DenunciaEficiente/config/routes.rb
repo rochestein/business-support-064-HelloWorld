@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :evidences
   resources :complaints
   resources :police_units
   resources :incidents
@@ -6,6 +7,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'users#index'
   namespace :api, defaults: {format: 'json'} do
-    resources :users, :incidents, :police_units, :complaints, only: [:index, :create, :destroy, :update, :show]
+    resources :users, :incidents, :police_units, :complaints, :evidences, only: [:index, :create, :destroy, :update, :show]
   end
 end
