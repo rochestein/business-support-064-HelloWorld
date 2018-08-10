@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  incident_id: 
+  police_unit: 
+  location: MyString
+  date_incident: 2018-08-10 15:13:57
+
+two:
+  user_id: 
+  incident_id: 
+  police_unit: 
+  location: MyString
+  date_incident: 2018-08-10 15:13:57
