@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @witness.user_id %>
+</p>
+
+<p>
+  <strong>Complaint:</strong>
+  <%= @witness.complaint_id %>
+</p>
+
+<%= link_to 'Edit', edit_witness_path(@witness) %> |
+<%= link_to 'Back', witnesses_path %>

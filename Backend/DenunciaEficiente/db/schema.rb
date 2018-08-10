@@ -34,15 +34,6 @@ ActiveRecord::Schema.define(version: 2018_07_31_020435) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "evidences_witnesses", force: :cascade do |t|
-    t.bigint "witnesses_id"
-    t.string "path_file"
-    t.string "narration"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["witnesses_id"], name: "index_evidences_witnesses_on_witnesses_id"
-  end
-
   create_table "incidents", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
@@ -68,6 +59,15 @@ ActiveRecord::Schema.define(version: 2018_07_31_020435) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "witness_evidences", force: :cascade do |t|
+    t.bigint "witnesses_id"
+    t.string "path_file"
+    t.string "narration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["witnesses_id"], name: "index_witness_evidences_on_witnesses_id"
+  end
+
   create_table "witnesses", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "complaint_id", null: false
@@ -80,8 +80,8 @@ ActiveRecord::Schema.define(version: 2018_07_31_020435) do
   add_foreign_key "complaints", "police_units"
   add_foreign_key "complaints", "users"
   add_foreign_key "evidences", "complaints"
-  add_foreign_key "evidences_witnesses", "witnesses", column: "witnesses_id"
   add_foreign_key "incidents", "incidents", column: "incident_father_id"
+  add_foreign_key "witness_evidences", "witnesses", column: "witnesses_id"
   add_foreign_key "witnesses", "complaints"
   add_foreign_key "witnesses", "users"
 end
