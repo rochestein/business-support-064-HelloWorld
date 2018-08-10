@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Witness Evidences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Witness</th>
+      <th>Path file</th>
+      <th>Narration</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @witness_evidences.each do |witness_evidence| %>
+      <tr>
+        <td><%= witness_evidence.witness_id %></td>
+        <td><%= witness_evidence.path_file %></td>
+        <td><%= witness_evidence.narration %></td>
+        <td><%= link_to 'Show', witness_evidence %></td>
+        <td><%= link_to 'Edit', edit_witness_evidence_path(witness_evidence) %></td>
+        <td><%= link_to 'Destroy', witness_evidence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Witness Evidence', new_witness_evidence_path %>

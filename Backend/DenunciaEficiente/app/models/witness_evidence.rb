@@ -1,0 +1,2 @@
+class WitnessEvidence < ApplicationRecord
+end

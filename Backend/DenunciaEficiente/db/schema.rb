@@ -60,12 +60,12 @@ ActiveRecord::Schema.define(version: 2018_07_31_020435) do
   end
 
   create_table "witness_evidences", force: :cascade do |t|
-    t.bigint "witnesses_id"
+    t.bigint "witness_id"
     t.string "path_file"
     t.string "narration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["witnesses_id"], name: "index_witness_evidences_on_witnesses_id"
+    t.index ["witness_id"], name: "index_witness_evidences_on_witness_id"
   end
 
   create_table "witnesses", force: :cascade do |t|
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2018_07_31_020435) do
   add_foreign_key "complaints", "users"
   add_foreign_key "evidences", "complaints"
   add_foreign_key "incidents", "incidents", column: "incident_father_id"
-  add_foreign_key "witness_evidences", "witnesses", column: "witnesses_id"
+  add_foreign_key "witness_evidences", "witnesses"
   add_foreign_key "witnesses", "complaints"
   add_foreign_key "witnesses", "users"
 end

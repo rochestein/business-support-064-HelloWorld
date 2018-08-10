@@ -1,0 +1,32 @@
+<%= form_with(model: witness_evidence, local: true) do |form| %>
+  <% if witness_evidence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(witness_evidence.errors.count, "error") %> prohibited this witness_evidence from being saved:</h2>
+
+      <ul>
+      <% witness_evidence.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :witness_id %>
+    <%= form.text_field :witness_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :path_file %>
+    <%= form.text_field :path_file %>
+  </div>
+
+  <div class="field">
+    <%= form.label :narration %>
+    <%= form.text_field :narration %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

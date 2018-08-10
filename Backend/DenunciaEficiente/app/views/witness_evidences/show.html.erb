@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Witness:</strong>
+  <%= @witness_evidence.witness_id %>
+</p>
+
+<p>
+  <strong>Path file:</strong>
+  <%= @witness_evidence.path_file %>
+</p>
+
+<p>
+  <strong>Narration:</strong>
+  <%= @witness_evidence.narration %>
+</p>
+
+<%= link_to 'Edit', edit_witness_evidence_path(@witness_evidence) %> |
+<%= link_to 'Back', witness_evidences_path %>

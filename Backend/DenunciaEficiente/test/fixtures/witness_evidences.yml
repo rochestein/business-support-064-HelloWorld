@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  witness_id: 
+  path_file: MyString
+  narration: MyString
+
+two:
+  witness_id: 
+  path_file: MyString
+  narration: MyString
