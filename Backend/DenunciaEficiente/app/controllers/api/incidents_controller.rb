@@ -7,6 +7,7 @@ class Api::IncidentsController < ApplicationController
     end
    
     def show
+      render json: @incident
     end
    
     def create

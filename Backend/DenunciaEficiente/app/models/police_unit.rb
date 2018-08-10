@@ -1,0 +1,2 @@
+class PoliceUnit < ApplicationRecord
+end
