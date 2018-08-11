@@ -7,6 +7,7 @@ class Api::WitnessEvidencesController < ApplicationController
     end
    
     def show
+      render json: @witnessEvidence
     end
    
     def create
@@ -38,6 +39,6 @@ class Api::WitnessEvidencesController < ApplicationController
       end
    
       def witnessEvidence_params
-        params.require(:witness_evidence).permit(:name)
+        params.require(:witness_evidence).permit(:witness_id, :path_file, :narration)
       end
 end

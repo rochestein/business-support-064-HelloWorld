@@ -39,6 +39,6 @@ class Api::ComplaintsController < ApplicationController
       end
    
       def complaint_params
-        params.require(:complaint).permit(:user_id, :incident_id, :police_unit_id, location, date_incident)
+        params.require(:complaint).permit(:user_id, :incident_id, :police_unit_id, :location, :date_incident)
       end
 end

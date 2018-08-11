@@ -7,6 +7,7 @@ class Api::PoliceUnitsController < ApplicationController
     end
    
     def show
+      render json: @policeUnit
     end
    
     def create

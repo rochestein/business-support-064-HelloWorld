@@ -1,0 +1,734 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Complaints",
+		"_postman_id": "131b0790-fd0d-2681-9c7e-7a1ad01af44b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Evidences",
+			"description": "",
+			"item": [
+				{
+					"name": "Evidences_GetAll",
+					"request": {
+						"url": "http://localhost:3000/api/evidences",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Evidences_Insert",
+					"request": {
+						"url": "http://localhost:3000/api/evidences",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"complaint_id\":\"1\", \"path_file\": \"ruta del archivo en ftp\", \"narration\":\"Descripcion del evento\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Evidences_Update",
+					"request": {
+						"url": "http://localhost:3000/api/evidences/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"complaint_id\":\"1\", \"path_file\": \"ruta del archivo en ftp\", \"narration\":\"Descripcion del evento\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Evidences_Delete",
+					"request": {
+						"url": "http://localhost:3000/api/evidences/1",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Evidences_Get",
+					"request": {
+						"url": "http://localhost:3000/api/evidences/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"complaint_id\":\"1\", \"path_file\": \"ruta del archivo en ftp XXX\", \"narration\":\"Descripcion del evento\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Witnesses",
+			"description": "",
+			"item": [
+				{
+					"name": "Witnesses_GetAll",
+					"request": {
+						"url": "http://localhost:3000/api/witnesses",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Witnesses_Insert",
+					"request": {
+						"url": "http://localhost:3000/api/witnesses",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user_id\":\"2\", \"complaint_id\": \"1\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Witnesses_Update",
+					"request": {
+						"url": "http://localhost:3000/api/witnesses/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user_id\":\"1\", \"complaint_id\": \"1\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Witnesses_Delete",
+					"request": {
+						"url": "http://localhost:3000/api/witnesses/3",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Witnesses_Get",
+					"request": {
+						"url": "http://localhost:3000/api/witnesses/2",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user_id\":\"2\", \"complaint_id\": \"1\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Incidents",
+			"description": "",
+			"item": [
+				{
+					"name": "Incidents_GetAll",
+					"request": {
+						"url": "http://localhost:3000/api/incidents",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Incidents_Insert",
+					"request": {
+						"url": "http://localhost:3000/api/incidents",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"robo2\",\"description\":\"robo2\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Incidents_Update",
+					"request": {
+						"url": "http://localhost:3000/api/incidents/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"robo2\",\"description\":\"robo2 update update\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Incidents_Delete",
+					"request": {
+						"url": "http://localhost:3000/api/incidents/1",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Incidents_Get",
+					"request": {
+						"url": "http://localhost:3000/api/incidents/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"robo2\",\"description\":\"robo2 update update\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "Users_GetAll",
+					"request": {
+						"url": "http://localhost:3000/api/users",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"s@m.h\",\"password\":\"pass#$03\",\"firstname\":\"Eeeee\",\"secondname\":\"Fffff\",\"firstsurname\":\"Ggggg\",\"secondsurname\":\"Hhhhh\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Users_Update",
+					"request": {
+						"url": "http://localhost:3000/api/users/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"s@m.h\",\"password\":\"pass#$03\",\"firstname\":\"Eeeee1\",\"secondname\":\"Fffff\",\"firstsurname\":\"Ggggg\",\"secondsurname\":\"Hhhhh\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Users_Insert",
+					"request": {
+						"url": "http://localhost:3000/api/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"s@m.h\",\"password\":\"pass#$03\",\"firstname\":\"Eeeee\",\"secondname\":\"Fffff\",\"firstsurname\":\"Ggggg\",\"secondsurname\":\"Hhhhh\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Users_Delete",
+					"request": {
+						"url": "http://localhost:3000/api/users/2",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Users_Get",
+					"request": {
+						"url": "http://localhost:3000/api/users/2",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"s@m.h\",\"password\":\"pass#$03\",\"firstname\":\"Eeeee\",\"secondname\":\"Fffff\",\"firstsurname\":\"Ggggg\",\"secondsurname\":\"Hhhhh\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PoliceUnits",
+			"description": "",
+			"item": [
+				{
+					"name": "PoliceUnits_GetAll",
+					"request": {
+						"url": "http://localhost:3000/api/police_units",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"robo\",\"description\":\"robo\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PoliceUnits_Get",
+					"request": {
+						"url": "http://localhost:3000/api/police_units/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"robo\",\"description\":\"robo\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PoliceUnits_Insert",
+					"request": {
+						"url": "http://localhost:3000/api/police_units",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"CAI 1\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PoliceUnits_Update",
+					"request": {
+						"url": "http://localhost:3000/api/police_units/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"CAI X\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PoliceUnits_Delete",
+					"request": {
+						"url": "http://localhost:3000/api/police_units/1",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Complaints",
+			"description": "",
+			"item": [
+				{
+					"name": "Complaints_GetAll",
+					"request": {
+						"url": "http://localhost:3000/api/complaints",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"s@m.h\",\"password\":\"pass#$03\",\"firstname\":\"Eeeee\",\"secondname\":\"Fffff\",\"firstsurname\":\"Ggggg\",\"secondsurname\":\"Hhhhh\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Complaints_Update",
+					"request": {
+						"url": "http://localhost:3000/api/complaints/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user_id\":\"2\",\"incident_id\":\"1\",\"police_unit_id\":\"1\",\"location\":\"Engativa N\",\"date_incident\":\"2018-08-10T23:49:45.526Z\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Complaints_Insert",
+					"request": {
+						"url": "http://localhost:3000/api/complaints",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user_id\":\"2\",\"incident_id\":\"1\",\"police_unit_id\":\"1\",\"location\":\"Engativa 1\",\"date_incident\":\"2018-08-10T23:49:45.526Z\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Complaints_Delete",
+					"request": {
+						"url": "http://localhost:3000/api/complaints/1",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Complaints_Get",
+					"request": {
+						"url": "http://localhost:3000/api/complaints/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user_id\":\"2\",\"incident_id\":\"1\",\"police_unit_id\":\"1\",\"location\":\"Engativa N\",\"date_incident\":\"2018-08-10T23:49:45.526Z\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WitnessEvidences",
+			"description": "",
+			"item": [
+				{
+					"name": "WitnessEvidences_GetAll",
+					"request": {
+						"url": "http://localhost:3000/api/witness_evidences",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"robo\",\"description\":\"robo\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "WitnessEvidences_Get",
+					"request": {
+						"url": "http://localhost:3000/api/witness_evidences/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"robo\",\"description\":\"robo\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "WitnessEvidences_Insert",
+					"request": {
+						"url": "http://localhost:3000/api/witness_evidences",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"witness_id\":\"2\", \"path_file\": \"ruta del archivo en ftp\", \"narration\":\"Descripcion del evento\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "WitnessEvidences_Update",
+					"request": {
+						"url": "http://localhost:3000/api/witness_evidences/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"witness_id\":\"2\", \"path_file\": \"ruta del archivo en ftp XXX\", \"narration\":\"Descripcion del evento\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "WitnessEvidences_Delete",
+					"request": {
+						"url": "http://localhost:3000/api/witness_evidences/1",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
