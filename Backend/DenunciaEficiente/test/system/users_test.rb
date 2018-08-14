@@ -14,14 +14,12 @@ class UsersTest < ApplicationSystemTestCase
     visit users_url
     click_on "New User"
 
-    fill_in "Created At", with: @user.created_at
     fill_in "Email", with: @user.email
     fill_in "Firstname", with: @user.firstname
     fill_in "Firstsurname", with: @user.firstsurname
-    fill_in "Password", with: @user.password
+    fill_in "Password Digest", with: @user.password_digest
     fill_in "Secondname", with: @user.secondname
     fill_in "Secondsurname", with: @user.secondsurname
-    fill_in "Updated At", with: @user.updated_at
     click_on "Create User"
 
     assert_text "User was successfully created"
@@ -32,14 +30,12 @@ class UsersTest < ApplicationSystemTestCase
     visit users_url
     click_on "Edit", match: :first
 
-    fill_in "Created At", with: @user.created_at
     fill_in "Email", with: @user.email
     fill_in "Firstname", with: @user.firstname
     fill_in "Firstsurname", with: @user.firstsurname
-    fill_in "Password", with: @user.password
+    fill_in "Password Digest", with: @user.password_digest
     fill_in "Secondname", with: @user.secondname
     fill_in "Secondsurname", with: @user.secondsurname
-    fill_in "Updated At", with: @user.updated_at
     click_on "Update User"
 
     assert_text "User was successfully updated"
